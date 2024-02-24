@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <div class="container">
+        <h1>JSON PROGRAM</h1> <!-- corrected spelling -->
+        <p id="demo">JSON will appear here</p> <!-- corrected grammar -->
+    </div>
+    <script>
+        let output = document.getElementById('demo');
+        let jsonDataPath = "./first.json";
+        fetch(jsonDataPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(jsonData => {
+            if (!jsonData.name || !jsonData.age || !jsonData.Skills) {
+                throw new Error('Invalid JSON format');
+            }
+            output.innerHTML = jsonData.name + " " + jsonData.age + " " + jsonData.Skills + " " + jsonData['Know Json'];
+            console.log(output.innerHTML);
+            console.log(jsonData);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    </script>
+</body>
+</html>

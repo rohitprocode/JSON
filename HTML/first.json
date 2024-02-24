@@ -1,0 +1,12 @@
+ {
+    "name" : "Rohit",
+    "age" : 23,
+    "Know Json" : true,
+    "Skills" : ["HTML","CSS","JavaScript","Bootstrap","React","JSON"],
+    "Projects" : {
+        "Twitter-Clone" : "React",
+        "Dice Rolling" : "React Chakra UI",
+        "Accordion" : "Reactjs",
+        "Spotify-Clone" : "HTML, CSS, JavaScript"
+    } 
+}
